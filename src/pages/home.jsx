@@ -5,7 +5,7 @@ import FilterGifs from "../components/filter-gifs";
 
 const Home = () => {
 
-  const { gf , gifs , setGifs , filter , setFilter , favorites} = GifState();
+  const { gf , gifs , setGifs , filter} = GifState();
 
   const fetchTrendingGifs = async () =>{
     const {data} = await gf.trending({
@@ -18,7 +18,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchTrendingGifs();
-  }, [filter]);
+  }, []);
 
   return (
     <div>
